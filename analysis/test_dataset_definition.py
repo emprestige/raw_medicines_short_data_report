@@ -16,6 +16,7 @@ test_data = {
         ],
         "patients": [
             {
+                "date_of_birth": date(1982, 3, 1),
                 "date_of_death": None
             }
         ],
@@ -132,6 +133,7 @@ test_data = {
         ],
         "patients": [
             {
+                "date_of_birth": date(1967, 7, 1),
                 "date_of_death": None
             }
         ],
@@ -155,6 +157,7 @@ test_data = {
         ],
         "patients": [
             {
+                "date_of_birth": date(2002, 9, 1),
                 "date_of_death": None
             }
         ],

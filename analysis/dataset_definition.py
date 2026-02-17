@@ -20,9 +20,14 @@ has_registration = practice_registrations.for_patient_on(
 # require patient to be alive/dead: use ONS record if present, otherwise use GP record
 death_date = ons_deaths.date.when_null_then(patients.date_of_death)
 was_alive = death_date.is_after(index_date) | death_date.is_null()
+correct_age = patients.age_on(index_date) <= 110
 
 # define population
-dataset.define_population(has_registration & was_alive)
+dataset.define_population(
+    has_registration & 
+    was_alive &
+    correct_age
+)
 
 # configure the dummy data
 dataset.configure_dummy_data(
